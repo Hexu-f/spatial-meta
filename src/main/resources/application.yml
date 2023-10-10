@@ -1,0 +1,44 @@
+#这里改为自己配置
+
+spring:
+  application:
+    name: spatial-meta
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://xxxxx:63829/testdb?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowMultiQueries=true
+    username: xxxxxx
+    password: xxxxxx
+  redis:
+    host: x.x.x.x
+    port: xxxx
+    password: xxxxxxxxx
+    timeout: 3000
+    database: 7
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+
+server:
+  port: 10001
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mapping/*.xml
+
+email:
+  mailHost: smtp.qiye.163.com
+  mailPort: 465
+  mailFrom: xxxx@xxx.com
+  mailUser: xxxx@xxx.com
+  mailPass: xxxxx
+
